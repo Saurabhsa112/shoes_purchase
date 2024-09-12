@@ -1,0 +1,333 @@
+/*===== GOOGLE FONTS =====*/ 
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/*===== VARIABLES CSS =====*/
+:root {
+  --header-height: 3rem;
+
+  /*===== Font weight =====*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  --font-bold: 700;
+
+  /*===== Colors =====*/
+  --dark-color: #141414;
+  --dark-color-light: #8a8a8a;
+  --dark-color-lighten: #f2f2f2;
+  --white-color: #fff;
+
+  /*===== Font and typography =====*/
+  --body-font: "Poppins", sans-serif;
+  --big-font-size: 1.25rem;
+  --bigger-font-size: 1.5rem;
+  --biggest-font-size: 2rem;
+  --h2-font-size: 1.25rem;
+  --normal-font-size: 0.938rem;
+  --smaller-font-size: 0.813rem;
+
+  /*===== Margins =====*/
+  --mb-1: 0.5rem;
+  --mb-2: 1rem;
+  --mb-3: 1.5rem;
+  --mb-4: 2rem;
+  --mb-5: 2.5rem;
+  --mb-6: 3rem;
+
+  /*===== z index =====*/
+  --z-fixed: 100;
+
+  /*===== Rotate img =====*/
+  --rotate-img: rotate(-30deg);
+}
+
+/*===== BASE =====*/
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-medium);
+  color: var(--dark-color);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--dark-color);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/*===== HEADER =====*/
+.header-1 {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  background-color: var(--dark-color-lighten);
+}
+
+/*===== NAV =====*/
+.nav {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.nav__logo {
+  font-size: var(--biggest-font-size);
+  color: var(--white-color);
+}
+
+.nav__toggle {
+  display: none;
+  cursor: pointer;
+}
+
+.nav__menu {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav__link {
+  color: var(--white-color);
+  font-size: var(--normal-font-size);
+  padding: 0.5rem 1rem;
+}
+
+.nav__link.active {
+  background-color: var(--dark-color);
+  border-radius: 0.25rem;
+}
+
+/*===== MENU SHOW =====*/
+.show {
+  display: block;
+}
+
+/*===== MAIN =====*/
+main {
+  padding-top: var(--header-height);
+}
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #e2e2e2, #ffffff);
+}
+
+.home__sneaker {
+  perspective: 1000px;
+}
+
+.shoe {
+  width: 300px;
+  height: 200px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateX(0deg) rotateY(0deg);
+  transition: transform 0.8s ease;
+}
+
+.shoe__side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.shoe__side--front {
+  transform: translateZ(100px);
+}
+
+.shoe__side--back {
+  transform: rotateY(180deg) translateZ(100px);
+}
+
+.shoe__side--top {
+  transform: rotateX(90deg) translateZ(100px);
+}
+
+.shoe__side--bottom {
+  transform: rotateX(-90deg) translateZ(100px);
+}
+
+.shoe__side--left {
+  transform: rotateY(-90deg) translateZ(100px);
+}
+
+.shoe__side--right {
+  transform: rotateY(90deg) translateZ(100px);
+}
+
+/*===== SECTION =====*/
+.section {
+  padding: 2rem;
+  text-align: center;
+}
+
+.section .bd-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+/*===== SNEAKER =====*/
+.sneaker {
+  background-color: var(--dark-color-lighten);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.sneaker__img {
+  max-width: 100%;
+  height: auto;
+}
+
+.sneaker__name {
+  font-size: var(--big-font-size);
+  margin: 0.5rem 0;
+}
+
+.sneaker__preci {
+  font-size: var(--normal-font-size);
+  color: #f7941d;
+}
+
+.purchase-btn {
+  background-color: #f7941d;
+  color: var(--white-color);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.purchase-btn:hover {
+  background-color: #e67e22;
+}
+
+/*===== ADMIN =====*/
+.admin-section {
+  background-color: #f5f5f5;
+}
+
+.inventory,
+.sales {
+  margin: 1rem 0;
+}
+
+.inventory-item,
+.sales-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--white-color);
+  padding: 1rem;
+  border: 1px solid #ddd;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+}
+
+.inventory-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.sales-name,
+.sales-sold,
+.sales-earnings {
+  font-size: var(--normal-font-size);
+}
+
+.sales-earnings {
+  color: #f7941d;
+}
+
+/*===== FOOTER =====*/
+.footer__container {
+  padding: 2rem 0;
+  background-color: var(--dark-color-lighten);
+  color: var(--white-color);
+  text-align: center;
+}
+
+.footer__title {
+  margin-bottom: var(--mb-2);
+  font-size: var(--biggest-font-size);
+}
+
+.footer__copy {
+  font-size: var(--normal-font-size);
+}
+
+/*===== RESPONSIVE =====*/
+@media (max-width: 768px) {
+  .nav__toggle {
+    display: block;
+  }
+
+  .nav__menu {
+    display: none;
+    position: absolute;
+    top: var(--header-height);
+    right: 0;
+    background: var(--dark-color-lighten);
+    width: 100%;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .nav__menu.show {
+    display: flex;
+  }
+
+  .nav__link {
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .home__sneaker {
+    margin-top: 2rem;
+  }
+
+  .sneaker {
+    width: 100%;
+    height: auto;
+  }
+}
